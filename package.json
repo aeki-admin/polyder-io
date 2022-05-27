@@ -1,0 +1,24 @@
+{
+  "name": "polyder-io",
+  "version": "1.0.0",
+  "description": "Templating and hosting resume with JSON",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./index.js"
+  },
+  "bin": {
+    "polyder-io": "./index.js"
+  },
+  "type": "commonjs",
+  "author": "Min Nam",
+  "license": "ISC",
+  "keywords": [
+    "resume",
+    "portfolio",
+    "personal web page",
+    "json to resume"
+  ],
+  "dependencies": {
+    "html-minifier": "^4.0.0"
+  }
+}

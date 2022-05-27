@@ -1,0 +1,165 @@
+{
+  "name": "polyder-io-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx ../"
+  },
+  "polyder-io": {
+    "port": 8888,
+    "data": [
+      {
+        "public": true,
+        "default": true,
+        "name": "Brad Pitt",
+        "role": "full-stack developer",
+        "email": "brad@pitt.io",
+        "address": "Vancouver, BC, Canada",
+        "phone": "123-456-789",
+        "description": "A fullstack developer with 5+ years of  experience writing responsive web applications for a broad range of industries. Specialized in Node.js and its widely used libraries and frameworks.",
+        "experience": [
+          {
+            "title": "Software Developer",
+            "titleDesc": "Some Company",
+            "start": "Jan 2018",
+            "end": "<b class=\"uppercase\">Current</b>",
+            "tags": [
+              "node.js",
+              "typescript"
+            ],
+            "list": [
+              "Development of scalable project management framework for the company and subsidiaries.",
+              "Scrum Management and direct/track team velocity and sprint/release progress.",
+              "Constant refactoring through code reviews and improve code documentation/reusabilities."
+            ]
+          },
+          {
+            "title": "Software Developer",
+            "titleDesc": "Some Company",
+            "start": "Jan 2018",
+            "end": "<b class=\"uppercase\">Current</b>",
+            "tags": [
+              "node.js",
+              "typescript"
+            ],
+            "list": [
+              "Development of scalable project management framework for the company and subsidiaries.",
+              "Scrum Management and direct/track team velocity and sprint/release progress.",
+              "Constant refactoring through code reviews and improve code documentation/reusabilities."
+            ]
+          }
+        ],
+        "education": [
+          {
+            "title": "MIT, Bachelor's Degree in CST",
+            "start": "Jan 2018",
+            "end": "<b class=\"uppercase\">Current</b>",
+            "description": "Human Computer Interface Option"
+          }
+        ],
+        "projects": [
+          {
+            "title": "Some Project",
+            "titleDesc": "Space Sharing App",
+            "start": "May 2019",
+            "end": "<b class=\"uppercase\">Current</b>",
+            "description": "<a href=\"https://test.com/test\">https://test.com/test</a>",
+            "tags": [
+              "node.js",
+              "typescript"
+            ]
+          }
+        ],
+        "links": [
+          {
+            "title": "Resume",
+            "titleDesc": "<a href=\"https://test.io\">https://test.io</a>"
+          }
+        ],
+        "skills": [
+          {
+            "title": "Automated Testing"
+          }
+        ]
+      },
+      {
+        "public": true,
+        "default": true,
+        "name": "Brad Pitt",
+        "id": "alternate",
+        "role": "full-stack developer",
+        "email": "brad@pitt.io",
+        "address": "Vancouver, BC, Canada",
+        "phone": "123-456-789",
+        "description": "A fullstack developer with 5+ years of  experience writing responsive web applications for a broad range of industries. Specialized in Node.js and its widely used libraries and frameworks.",
+        "experience": [
+          {
+            "title": "Software Developer",
+            "titleDesc": "Some Company",
+            "start": "Jan 2018",
+            "end": "<b class=\"uppercase\">Current</b>",
+            "tags": [
+              "node.js",
+              "typescript"
+            ],
+            "list": [
+              "Development of scalable project management framework for the company and subsidiaries.",
+              "Scrum Management and direct/track team velocity and sprint/release progress.",
+              "Constant refactoring through code reviews and improve code documentation/reusabilities."
+            ]
+          },
+          {
+            "title": "Software Developer",
+            "titleDesc": "Some Company",
+            "start": "Jan 2018",
+            "end": "<b class=\"uppercase\">Current</b>",
+            "tags": [
+              "node.js",
+              "typescript"
+            ],
+            "list": [
+              "Development of scalable project management framework for the company and subsidiaries.",
+              "Scrum Management and direct/track team velocity and sprint/release progress.",
+              "Constant refactoring through code reviews and improve code documentation/reusabilities."
+            ]
+          }
+        ],
+        "education": [
+          {
+            "title": "MIT, Bachelor's Degree in CST",
+            "start": "Jan 2018",
+            "end": "<b class=\"uppercase\">Current</b>",
+            "description": "Human Computer Interface Option"
+          }
+        ],
+        "projects": [
+          {
+            "title": "Some Project",
+            "titleDesc": "Space Sharing App",
+            "start": "May 2019",
+            "end": "<b class=\"uppercase\">Current</b>",
+            "description": "<a href=\"https://test.com/test\">https://test.com/test</a>",
+            "tags": [
+              "node.js",
+              "typescript"
+            ]
+          }
+        ],
+        "links": [
+          {
+            "title": "Resume",
+            "titleDesc": "<a href=\"https://test.io\">https://test.io</a>"
+          }
+        ],
+        "skills": [
+          {
+            "title": "Automated Testing"
+          }
+        ]
+      }
+    ]
+  },
+  "author": "Min NAm",
+  "license": "ISC"
+}
