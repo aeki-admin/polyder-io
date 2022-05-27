@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npx ../"
+    "start": "npx polyder-io"
   },
   "polyder-io": {
     "port": 8888,
