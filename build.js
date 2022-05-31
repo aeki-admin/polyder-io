@@ -4,10 +4,12 @@ const fs = require('fs')
 const minify = require('html-minifier').minify
 
 const CONFIG = JSON.parse(fs.readFileSync(`${process.cwd()}/data.json`, "utf8"));
-const DEFAULT = CONFIG?.data?.filter?.((a) => a.default)?.[0]
+const SETCONFIG = JSON.parse(fs.readFileSync(`${process.cwd()}/package.json`, "utf8"))['polyder-io'];
+const DEFAULT = SETCONFIG?.data?.filter?.((a) => a.default)?.[0]
 
 function generateResume() {
-  content = DEFAULT
+  const content = CONFIG || DEFAULT
+
   fs.readFile(`${__dirname}/index.html`, "utf8", (err, data) => {
     const parsed = data.replace('{{ DATA }}', JSON.stringify(content))
       .replaceAll('{{ COLOR_BACKGROUND }}', '#efefef')
