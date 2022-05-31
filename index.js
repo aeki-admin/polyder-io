@@ -18,6 +18,7 @@ function generateResume({ content, res }) {
       .replaceAll('{{ COLOR_PRIMARY }}', '#5935de')
       .replaceAll('{{ NAME }}', content?.name)
       .replaceAll('{{ ROLE }}', content?.role)
+    
     res.write(minify(parsed, {
       minifyCSS: true,
       minifyJS: true,

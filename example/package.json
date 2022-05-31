@@ -4,67 +4,111 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npx polyder-io"
+    "start": "npx polyder-io",
+    "build": "node ../build.js"
   },
   "polyder-io": {
-    "port": 8888,
+    "port": 8082,
     "data": [
       {
         "public": true,
         "default": true,
-        "name": "Brad Pitt",
-        "role": "full-stack developer",
-        "email": "brad@pitt.io",
+        "name": "Joeman Fong",
+        "role": "Full Stack developer",
+        "email": "joemanfong@gmail.com",
         "address": "Vancouver, BC, Canada",
-        "phone": "123-456-789",
-        "description": "A fullstack developer with 5+ years of  experience writing responsive web applications for a broad range of industries. Specialized in Node.js and its widely used libraries and frameworks.",
+        "phone": "778-883-5667",
+        "description": "Full Stack Developer with 5+ years creating Web and Mobile applications from conception to deployment with motivations to work on projects that provide a positive impact on the world.",
         "experience": [
           {
-            "title": "Software Developer",
-            "titleDesc": "Some Company",
-            "start": "Jan 2018",
+            "title": "Founding Engineer",
+            "titleDesc": "Spoonful App",
+            "start": "Mar 2020",
             "end": "<b class=\"uppercase\">Current</b>",
             "tags": [
-              "node.js",
-              "typescript"
+              "node.js", "typescript", "javascript", "ElasticSearch", "PHP", "Python", "NextJS", "GCP", "Firebase", "Dockers", "iOS", "Android", "React Native", "Expo"
             ],
             "list": [
-              "Development of scalable project management framework for the company and subsidiaries.",
-              "Scrum Management and direct/track team velocity and sprint/release progress.",
-              "Constant refactoring through code reviews and improve code documentation/reusabilities."
+              "Architect and implement the Spoonful Ecosystem",
+              "Founded Spoonful app, a mobile app with over 100K installs and 4.6+ star review in both the App Store and Playstore"
             ]
           },
           {
             "title": "Software Developer",
-            "titleDesc": "Some Company",
-            "start": "Jan 2018",
+            "titleDesc": "Ventana Construction Corporation",
+            "start": "Jan 2020",
             "end": "<b class=\"uppercase\">Current</b>",
             "tags": [
               "node.js",
-              "typescript"
+              "typescript",
+              "React",
+              "React Native", 
+              "Expo",
+              "Digital Ocean"
             ],
             "list": [
-              "Development of scalable project management framework for the company and subsidiaries.",
+              "Development of a scalable project management framework for the company and subsidiaries.",
               "Scrum Management and direct/track team velocity and sprint/release progress.",
-              "Constant refactoring through code reviews and improve code documentation/reusabilities."
+              "Lead development of the mobile app to be used in house"
+            ]
+          },
+          {
+            "title": "Web Application Developer",
+            "titleDesc": "DevRadius",
+            "start": "April 2017",
+            "end": "Dec 2019",
+            "tags": [
+              "SDLC", "Consulting", "Web Technologies"
+            ],
+            "list": [
+              "Scoping, estimating, designing, and implementing complex web applications for key clients in an agile life cycle."
+            ]
+          },
+          {
+            "title": "Front End Developer",
+            "titleDesc": "Thrinacia",
+            "start": "April 2017",
+            "end": "Dec 2019",
+            "tags": [
+              "node.js",
+              "typescript",
+              "Angular",
+              "sass",
+              "javascript"
+            ],
+            "list": [
+              "Design, develop and maintain front-end software development features for the Thrinacia crowdfunding engine",
+              "Walk clients through project scope, deliverables and provide on-going consultation",
+              "Implementation of the Stripe Connected Marketplace ecosystem"
             ]
           }
         ],
         "education": [
           {
-            "title": "MIT, Bachelor's Degree in CST",
-            "start": "Jan 2018",
+            "title": "Computer Systems Technology",
+            "start": "2017",
             "end": "<b class=\"uppercase\">Current</b>",
-            "description": "Human Computer Interface Option"
+            "description": "Associates Degree, graduated with distinction"
           }
         ],
         "projects": [
           {
-            "title": "Some Project",
+            "title": "Parkat",
             "titleDesc": "Space Sharing App",
-            "start": "May 2019",
+            "start": "May 2022",
             "end": "<b class=\"uppercase\">Current</b>",
-            "description": "<a href=\"https://test.com/test\">https://test.com/test</a>",
+            "description": "<a href=\"https://parkat.io\">https://parkat.io</a>",
+            "tags": [
+              "node.js",
+              "typescript"
+            ]
+          },
+          {
+            "title": "Polyder.io",
+            "titleDesc": "Simple Resume Builder",
+            "start": "May 2022",
+            "end": "<b class=\"uppercase\">Current</b>",
+            "description": "<a href=\"https://polyder.io\">https://polyder.io</a>",
             "tags": [
               "node.js",
               "typescript"
@@ -73,11 +117,35 @@
         ],
         "links": [
           {
+            "title": "LinkedIn",
+            "titleDesc": "<a href=\"https://linkedin.com/in/joemanfong\">https://linkedin.com/in/joemanfong</a>"
+          },
+          {
+            "title": "GitHub",
+            "titleDesc": "<a href=\"https://github.com/joeFong\">https://github.com/joeFong</a>"
+          },
+          {
+            "title": "LinkedIn",
+            "titleDesc": "<a href=\"https://medium.com/@joemanfong\">https://medium.com/@joemanfong</a>"
+          },
+          {
             "title": "Resume",
-            "titleDesc": "<a href=\"https://test.io\">https://test.io</a>"
+            "titleDesc": "<a href=\"https://joemanfong.com\">https://joemanfong.com</a>"
           }
         ],
         "skills": [
+          {
+            "title": "Software Architecture"
+          },
+          {
+            "title": "Database design"
+          },
+          {
+            "title": "Application design"
+          },
+          {
+            "title": "Cloud Dev Op's Engineer with a focus on GCP" 
+          },
           {
             "title": "Automated Testing"
           }
@@ -87,7 +155,6 @@
         "public": true,
         "default": true,
         "name": "Brad Pitt",
-        "id": "alternate",
         "role": "full-stack developer",
         "email": "brad@pitt.io",
         "address": "Vancouver, BC, Canada",
@@ -160,6 +227,6 @@
       }
     ]
   },
-  "author": "Min NAm",
+  "author": "Min Nam",
   "license": "ISC"
 }
