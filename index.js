@@ -33,7 +33,6 @@ try {
         .replaceAll('{{ COLOR_SHADOW }}', 'rgba(0,0,0,0.1)')
         .replaceAll('{{ COLOR_PRIMARY }}', '#5935de')
         .replaceAll('{{ NAME }}', content?.name)
-        .replaceAll('{{ DESCRIPTION }}', content?.description)
         .replaceAll('{{ ROLE }}', content?.role)
               
       res.write(minify(parsed, {
@@ -80,10 +79,6 @@ try {
 
   console.log(`${clc.magenta("polyder-io:")} ${clc.green("log:")} started on port ${CONFIG?.port || 8080}`)
 
-<<<<<<< HEAD
-console.log(`polyder.io | started on port ${CONFIG?.port || 8080}`)
-=======
 } catch (e) {
   console.error(e)
 }
->>>>>>> aaafad96b7b6a170fcd7c81357600f6bef85f4af
