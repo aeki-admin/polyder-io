@@ -1,0 +1,7 @@
+{
+  "extensions.disabled": [
+    "ms-vscode.jscs",
+    "dbaeumer.vscode-eslint"
+  ],
+  "editor.formatOnSave": false,
+}

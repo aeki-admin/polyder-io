@@ -3,6 +3,18 @@
 
 <head>
   <title>{{ NAME }} - {{ ROLE }}</title>
+  <meta name="description" content="{{ DESCRIPTION }}"/>
+
+  <!-- socials title -->
+  <meta property="og:title" content="{{ NAME }} - {{ ROLE }}"></meta>
+  <meta name="twitter:title" content="{{ NAME }} - {{ ROLE }}"></meta>
+
+  <!-- socials description -->
+  <meta name="twitter:description" content="{{ DESCRIPTION }}"></meta>
+  <meta property="og:description" content="{{ DESCRIPTION }}"></meta>
+
+  {{ IMAGE }}
+  
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -11,6 +23,9 @@
   <meta name="msapplication-config" content="/browserconfig.xml" />
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
+  <meta charset="utf-8" />
+  <meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -354,6 +369,7 @@
       * {
         /* font-size: 20px; */
       }
+      
 
       #container-main {
         padding-right: 32px;
@@ -361,7 +377,8 @@
 
       html {
         background: none;
-        zoom: 2;
+        /* zoom: 2; */
+        min-height: initial !important;
       }
 
       body {
@@ -385,6 +402,7 @@
 
       .show-print {
         display: initial !important;
+        opacity: 1 !important;
       }
 
       .container-list-item-title { 
@@ -393,7 +411,7 @@
       }
 
       #side {
-        position: initial;
+        position: initial !important;
         padding: 0px 16px;
         width: 100%;
         max-width: 200px;
@@ -462,7 +480,7 @@
     </div>
   </div>
   <div id="footer" class="no-print">
-    <span class="small">This page is generate with <a>polyder.io</a></span>
+    <span class="small">This page is generate with <a target="'_blank" href="https://www.npmjs.com/package/polyder-io">polyder.io</a></span>
   </div>
   <script>
     window['quick-resume'] = {{ DATA }}
