@@ -19,6 +19,11 @@ function generateResume({ content, res }) {
       .replaceAll('{{ NAME }}', content?.name)
       .replaceAll('{{ DESCRIPTION }}', content?.description)
       .replaceAll('{{ ROLE }}', content?.role)
+
+    //conditionals 
+    // if
+
+    // parsed.replaceAll('{{ IMAGE }}', content?.description)
     
     res.write(minify(parsed, {
       minifyCSS: true,
