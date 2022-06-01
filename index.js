@@ -28,14 +28,27 @@ try {
     fs.readFile(`${__dirname}/index.html`, "utf-8", (err, data) => {
       res.writeHeader(200, { "Content-Type": "text/html" })
 
-      const parsed = data.replace('{{ DATA }}', JSON.stringify(content))
+      let parsed = data.replace('{{ DATA }}', JSON.stringify(content))
         .replaceAll('{{ COLOR_BACKGROUND }}', '#efefef')
         .replaceAll('{{ COLOR_SHADOW }}', 'rgba(0,0,0,0.1)')
         .replaceAll('{{ COLOR_PRIMARY }}', '#5935de')
         .replaceAll('{{ NAME }}', content?.name)
         .replaceAll('{{ DESCRIPTION }}', content?.description)
         .replaceAll('{{ ROLE }}', content?.role)
-              
+      
+      if(content?.image) {
+        const image = (`
+          <link rel="preload" as="image" href=${content?.image} />
+          <meta name="twitter:image" content=${content?.image}></meta>
+          <meta property="og:image" content=${content?.image}></meta>
+          <meta property="og:image:width" content="1920"></meta>
+          <meta property="og:image:height" content="1080"></meta>
+        `)
+        parsed = parsed.replaceAll('{{ IMAGE }}', image)
+      } else {
+        parsed = parsed.replaceAll('{{ IMAGE }}', '')
+      }
+      
       res.write(minify(parsed, {
         minifyCSS: true,
         minifyJS: true,
@@ -80,10 +93,6 @@ try {
 
   console.log(`${clc.magenta("polyder-io:")} ${clc.green("log:")} started on port ${CONFIG?.port || 8080}`)
 
-<<<<<<< HEAD
-console.log(`polyder.io | started on port ${CONFIG?.port || 8080}`)
-=======
 } catch (e) {
   console.error(e)
 }
->>>>>>> aaafad96b7b6a170fcd7c81357600f6bef85f4af
