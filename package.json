@@ -8,7 +8,8 @@
     "build": "node ./build.js"
   },
   "bin": {
-    "polyder-io": "./index.js"
+    "polyder-io": "./index.js",
+    "polyder-io@build": "./build.js"
   },
   "type": "commonjs",
   "author": "Min Nam",
@@ -20,6 +21,7 @@
     "json to resume"
   ],
   "dependencies": {
+    "cli-color": "^2.0.2",
     "html-minifier": "^4.0.0"
   }
 }
