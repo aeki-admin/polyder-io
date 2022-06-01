@@ -34,7 +34,7 @@ try {
         .replaceAll('{{ COLOR_PRIMARY }}', '#5935de')
         .replaceAll('{{ NAME }}', content?.name)
         .replaceAll('{{ ROLE }}', content?.role)
-        
+              
       res.write(minify(parsed, {
         minifyCSS: true,
         minifyJS: true,
@@ -47,8 +47,7 @@ try {
 
   http.createServer(function (req, res) {    
     if (fs.existsSync(CONFIG_PATH)) {
-      CONFIG = require(CONFIG_PATH)
-      console.log('read', CONFIG.data[1])
+      CONFIG = require(CONFIG_PATH)      
     } else if (fs.existsSync(PACAKGE_JSON_PATH)) {  
       CONFIG = JSON.parse(fs.readFileSync(PACAKGE_JSON_PATH, "utf-8"))['polyder-io'];
     }
@@ -65,8 +64,7 @@ try {
         var filePath = path.join(`${__dirname}/public`, req.url);
         var stat = fs.statSync(filePath);
 
-        res.writeHead(200, {
-          'Content-Type': 'audio/mpeg',
+        res.writeHead(200, {          
           'Content-Length': stat.size
         });
 

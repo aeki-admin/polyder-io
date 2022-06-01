@@ -4,10 +4,12 @@
   "description": "Templating and hosting resume with JSON",
   "main": "index.js",
   "scripts": {
-    "start": "node ./index.js"
+    "start": "node ./index.js",
+    "build": "node ./build.js"
   },
   "bin": {
-    "polyder-io": "./index.js"
+    "polyder-io": "./index.js",
+    "polyder-io@build": "./build.js"
   },
   "type": "commonjs",
   "author": "Min Nam",
