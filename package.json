@@ -19,6 +19,7 @@
     "json to resume"
   ],
   "dependencies": {
+    "cli-color": "^2.0.2",
     "html-minifier": "^4.0.0"
   }
 }

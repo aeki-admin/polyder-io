@@ -11,6 +11,9 @@
   <meta name="msapplication-config" content="/browserconfig.xml" />
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
+  <meta charset="utf-8" />
+  <meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -354,6 +357,7 @@
       * {
         /* font-size: 20px; */
       }
+      
 
       #container-main {
         padding-right: 32px;
@@ -362,6 +366,7 @@
       html {
         background: none;
         zoom: 2;
+        min-height: initial !important;
       }
 
       body {
@@ -462,7 +467,7 @@
     </div>
   </div>
   <div id="footer" class="no-print">
-    <span class="small">This page is generate with <a>polyder.io</a></span>
+    <span class="small">This page is generate with <a target="'_blank" href="https://www.npmjs.com/package/polyder-io">polyder.io</a></span>
   </div>
   <script>
     window['quick-resume'] = {{ DATA }}
