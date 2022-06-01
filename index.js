@@ -17,6 +17,7 @@ function generateResume({ content, res }) {
       .replaceAll('{{ COLOR_SHADOW }}', 'rgba(0,0,0,0.1)')
       .replaceAll('{{ COLOR_PRIMARY }}', '#5935de')
       .replaceAll('{{ NAME }}', content?.name)
+      .replaceAll('{{ DESCRIPTION }}', content?.description)
       .replaceAll('{{ ROLE }}', content?.role)
     
     res.write(minify(parsed, {
@@ -24,10 +25,6 @@ function generateResume({ content, res }) {
       minifyJS: true,
       minifyURLs: true,
       sortAttributes: true,
-
-      // removeTagWhitespace: true,
-      // decodeEntities: true,
-      // removeAttributeQuotes: true,
     }))
     res.end()
   })
