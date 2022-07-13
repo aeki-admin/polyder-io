@@ -35,6 +35,7 @@ try {
         .replaceAll('{{ COLOR_HIGHLIGHT }}', CONFIG?.theme?.highlightColor ||'#fcf3a4')
         .replaceAll('{{ NAME }}', content?.name)
         .replaceAll('{{ ROLE }}', content?.role)
+        .replaceAll('{{ DESCRIPTION }}', content?.description)
         .replaceAll('<uppercase>', `<span class='uppercase'>`)
         .replaceAll('</uppercase>', '</span>')
         .replaceAll('<highlight>', `<span class='highlight'>`)

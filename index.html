@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
   <title>{{ NAME }} - {{ ROLE }}</title>
+  <meta name="description" content="{{ DESCRIPTION }}">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -572,7 +572,7 @@
     <div class="container-title flex mb-16">
       <div class="flex centerY">        
         <h1 id="text-name"></h1>
-        <button id="button-print" class="button-print no-print">
+        <button id="button-print" class="button-print no-print" aria-label="Print this resume">
           <svg xmlns="http://www.w3.org/2000/svg" height="16px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path class="icon" d="M19 8H5c-1.66 0-3 1.34-3 3v4c0 1.1.9 2 2 2h2v2c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2v-2h2c1.1 0 2-.9 2-2v-4c0-1.66-1.34-3-3-3zm-4 11H9c-.55 0-1-.45-1-1v-4h8v4c0 .55-.45 1-1 1zm4-7c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-2-9H7c-.55 0-1 .45-1 1v2c0 .55.45 1 1 1h10c.55 0 1-.45 1-1V4c0-.55-.45-1-1-1z"/></svg>
         </button>
       </div>
@@ -629,10 +629,10 @@
       <p class="medium">Turn <span class="bold">background graphics</span> on for the best result!</p>
       <img src="/setting.png" class='rounded mb-8'/>
       <div class="flex alignRight">
-        <button class="button button-secondary mr-4" id="button-modal-close">
+        <button class="button button-secondary mr-4" id="button-modal-close" aria-label="Close modal">
           Close
         </button>
-        <button class="button button-primary" id="button-modal-print">
+        <button class="button button-primary" id="button-modal-print" aria-label="Confirm printing">
           Print
         </button>
       </div>
