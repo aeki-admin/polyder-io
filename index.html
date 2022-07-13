@@ -41,14 +41,14 @@
       opacity: 0;
       transition: all .4s cubic-bezier(.165, .84, .44, 1);
       /* overflow: hidden; */
-      transform: translateY(-40px);
+      /* transform: translateY(-40px); */
     }
 
     #container {
       max-width: 800px;
       min-width: 800px;
       margin: 0 auto;
-      padding: 40px 32px;
+      padding: 40px 32px 40px 32px;
       background: white;
       border-radius: 4px;
       position: relative;
@@ -67,6 +67,7 @@
 
     h1 {
       font-size: 2rem;
+      white-space: nowrap;
     }
 
     h2 {
@@ -106,12 +107,20 @@
       margin-bottom: 32px;
     }
 
+    .mr-4 {
+      margin-right: 4px;
+    }
+
     .pr-8 {
       padding-right: 8px;
     }
 
     .pr-32 {
       padding-right: 32px;
+    }
+
+    .medium {
+      font-size: .95rem;
     }
 
     .small {
@@ -131,6 +140,10 @@
       font-style: italic;
     }
 
+    .rounded {
+      border-radius: 4px;
+    }
+
     li {
       margin-left: 16px;
       font-size: .9rem;
@@ -139,6 +152,14 @@
 
     .flex {
       display: flex;
+    }
+
+    .centerY {
+      align-items: center;
+    }
+
+    .alignRight {
+      justify-content: flex-end;
     }
 
     .flex-wrap {
@@ -159,8 +180,7 @@
 
     .tag {
       font-size: 11px;
-      background: #efefef;
-      padding: 0 8px;
+      background: #efefef;      
       height: 20px;
       line-height: 20px;
       display: flex;
@@ -168,6 +188,15 @@
       border-radius: 10px;
       margin-right: 4px;
       margin-bottom: 6px;
+      overflow: hidden;
+    }
+
+    .tag span {
+      padding: 0 8px;
+    }
+
+    .highlight {
+      background: {{ COLOR_HIGHLIGHT }};
     }
 
     .hr {
@@ -200,6 +229,10 @@
       text-decoration: none;
       color: {{ COLOR_PRIMARY }};
     }       
+
+    button {
+      cursor: pointer;
+    }
 
     .button-close {
       z-index: 5;
@@ -242,6 +275,41 @@
       left: 0;
     }
 
+    .button {
+      transition: all .25s cubic-bezier(.165, .84, .44, 1);
+    }
+
+    .button:hover {
+      opacity: 0.8
+    }
+
+    .button:hover:active {
+      transform: scale(.96);
+    }
+
+    .button-primary {
+      /* padding: 4px 8px; */
+      height: 28px;
+      padding: 0 8px;
+      border: 0;
+      border-radius: 4px;
+      background: {{ COLOR_PRIMARY }};
+      color: white;
+      font-size: .9rem;
+      font-weight: 500;    
+    }
+
+    .button-secondary {
+      /* padding: 4px 8px; */
+      height: 28px;
+      padding: 0 8px;
+      border: 0;
+      border-radius: 4px;
+      background: rgb(240,240,240);      
+      font-size: .9rem;
+      font-weight: 500;    
+    }
+
     .hide {
       display: none;
     }
@@ -281,6 +349,83 @@
       padding: 20px 0px 8px 0;
       align-items: center;
       justify-content: center;
+    }
+
+    .button-print {
+      width: 100%;
+      border: none;
+      height: 28px;
+      background-color: {{ COLOR_PRIMARY }};
+      color: white;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all .25s cubic-bezier(.165, .84, .44, 1);
+      width: 24px;
+      height: 24px;
+      margin-left: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .button-print:hover {
+      opacity: 0.8;
+    }
+
+    .button-print:hover:active {
+      transform: scale(.96);
+    }
+
+    .button-print .icon {
+      fill: white;
+    } 
+
+    .overlay {
+      position: initial;
+      left: 0;
+      top: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .container-side-element .overlay {
+      display: none;
+    }
+
+    .container-modal {
+      background: white;
+      position: fixed;
+      width: 320px;
+      /* height: 200px; */
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 4px;
+      padding: 16px;
+      box-shadow: 1px 1px 10px 1px rgba(0,0,0,0.1);
+    }
+
+    .container-modal img{ 
+      width: 100%;
+    }
+
+    #modal-print {
+      position: fixed; 
+      width: 100%; 
+      height: 100%; 
+      left: 0; 
+      top: 0; 
+      display: none; 
+      opacity: 0;
+      transition: all .25s cubic-bezier(.165, .84, .44, 1);
+    }    
+    
+    .container-modal {    
+      transition: all .25s cubic-bezier(.165, .84, .44, 1);
     }
 
     @media (max-width:800px) {
@@ -349,6 +494,7 @@
         width: 100%;
         background: rgba(0, 0, 0, 0.5);
         height: 100%;
+        display: initial !important;
       }
     }
 
@@ -365,7 +511,7 @@
 
       html {
         background: none;
-        /* zoom: 2; */
+        zoom: 1;
         min-height: initial !important;
       }
 
@@ -424,7 +570,12 @@
 <body>  
   <div id='container'>  
     <div class="container-title flex mb-16">
-      <h1 id="text-name"></h1>
+      <div class="flex centerY">        
+        <h1 id="text-name"></h1>
+        <button id="button-print" class="button-print no-print">
+          <svg xmlns="http://www.w3.org/2000/svg" height="16px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path class="icon" d="M19 8H5c-1.66 0-3 1.34-3 3v4c0 1.1.9 2 2 2h2v2c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2v-2h2c1.1 0 2-.9 2-2v-4c0-1.66-1.34-3-3-3zm-4 11H9c-.55 0-1-.45-1-1v-4h8v4c0 .55-.45 1-1 1zm4-7c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-2-9H7c-.55 0-1 .45-1 1v2c0 .55.45 1 1 1h10c.55 0 1-.45 1-1V4c0-.55-.45-1-1-1z"/></svg>
+        </button>
+      </div>
       <div id="button-menu" class="hide-desktop button-close no-print">
         <span></span>
         <span></span>
@@ -450,7 +601,7 @@
           <h2 class='mb-8 uppercase'>Projects</h2>
           <div id="text-other-projects"></div>
         </div>
-      </div>
+      </div>      
       <div class="container-side-element hide show-print not-visible">
         <div class="overlay no-print"></div>
         <div id="side">
@@ -462,13 +613,30 @@
           </div>
           <h2 class='mb-8 uppercase'>Skills</h2>
           <div id='text-other-skills' class="mb-32">
-          </div>
+          </div>          
         </div>
       </div>
     </div>
   </div>
   <div id="footer" class="no-print">
     <span class="small">This page is generate with <a target="'_blank" href="https://www.npmjs.com/package/polyder-io">polyder.io</a></span>
+  </div>
+  <div id="modal-print">
+    <div class="overlay no-print">
+    </div>        
+    <div class="container-modal no-print">
+      <p class="bold">Print</p>      
+      <p class="medium">Turn <span class="bold">background graphics</span> on for the best result!</p>
+      <img src="/setting.png" class='rounded mb-8'/>
+      <div class="flex alignRight">
+        <button class="button button-secondary mr-4" id="button-modal-close">
+          Close
+        </button>
+        <button class="button button-primary" id="button-modal-print">
+          Print
+        </button>
+      </div>
+    </div>
   </div>
   <script>
     window['quick-resume'] = {{ DATA }}
@@ -538,7 +706,7 @@
             </p>
           </div >
         ${tags.length > 0 ? `<div class="content flex-wrap">
-            ${map(tags, (tag) => { return `<span class="tag">${tag}</span>` })}          
+            ${map(tags, (tag) => { return `<span class="tag">${tag.includes('span') ? tag : `<span>${tag}</span>`}</span>` })}          
           </div>` : ''
         }
           ${description ? `<p class="small ${list.length > 0 ? 'mb-8' : ''}">${description}</p>` : ''}
@@ -588,7 +756,7 @@
       }
     }
 
-    document.getElementById('button-menu').addEventListener('click', () => {
+    const handleButtonMenu = () => {
       const target = document.getElementById('button-menu')
       if (target.className.includes('closed')) {
         target.className = target.className.replace(' closed', '')
@@ -596,8 +764,54 @@
       } else {
         target.className = `${target.className} closed`
         toggleSide(true)
+      }      
+    }
+
+    const handleButtonPrint = () => {
+      const modal = document.getElementById('modal-print')
+      const modalContainer = document.getElementsByClassName('container-modal')[0]
+
+      modal.style.display = 'inline'
+      modalContainer.style.transform = 'translate(-50%, -55%)'
+
+      setTimeout(() => {
+        modal.style.opacity = 1
+        modalContainer.style.transform = 'translate(-50%, -50%)'
+      }, 50)
+
+      const handleButtonModalClose = () => {
+        modal.style.opacity = 0
+        modalContainer.style.transform = 'translate(-50%, -55%)'
+
+        setTimeout(() => {
+          modal.style.display = 'none'
+        }, 50)
+
+        document.getElementById('button-modal-close').removeEventListener('click', handleButtonModalClose)
+        document.getElementById('button-modal-print').removeEventListener('click', handleModalPrint)
       }
-    })
+
+      const handleModalPrint = () => {
+        window.print()
+
+        modal.style.opacity = 0
+        modalContainer.style.transform = 'translate(-50%, -55%)'
+
+        setTimeout(() => {
+          modal.style.display = 'none'
+        }, 50)
+
+        document.getElementById('button-modal-print').removeEventListener('click', handleModalPrint)
+      }
+
+      document.getElementById('button-modal-close').addEventListener('click', handleButtonModalClose)
+      document.getElementById('button-modal-print').addEventListener('click', handleModalPrint)
+     
+      // document.getElementById('button-print').removeEventListener('click', handleButtonPrint)
+    }
+
+    document.getElementById('button-menu').addEventListener('click', handleButtonMenu)
+    document.getElementById('button-print').addEventListener('click', handleButtonPrint)
 
     setInnerText('name', name)
     setInnerText('role', role)
@@ -621,9 +835,13 @@
       return `<div class="content ${key < skills.length - 1 ? 'mb-8' : ''}" > ${generateSimplerList(item)}</div >`
     }))
 
+    document.body.style.transform = 'translateY(-40px)'
     setTimeout(() => {
       document.body.style.opacity = 1;
       document.body.style.transform = 'translateY(0px)'
+      setTimeout(() => {
+        document.body.style.transform = ''
+      }, 1)
     }, 50)
     
       const mobile = window.matchMedia('(max-width:800px)')      

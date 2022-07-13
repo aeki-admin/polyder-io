@@ -87,7 +87,7 @@
         "end": "<b class=\"uppercase\">Current</b>",
         "description": "<a href=\"https://parkat.io\">https://parkat.io</a>",
         "tags": [
-          "node.js",
+          "<span className='highlight'>node.js</span>",
           "typescript"
         ]
       },

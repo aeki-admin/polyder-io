@@ -29,11 +29,16 @@ try {
       res.writeHeader(200, { "Content-Type": "text/html" })
 
       const parsed = data.replace('{{ DATA }}', JSON.stringify(content))
-        .replaceAll('{{ COLOR_BACKGROUND }}', '#efefef')
-        .replaceAll('{{ COLOR_SHADOW }}', 'rgba(0,0,0,0.1)')
-        .replaceAll('{{ COLOR_PRIMARY }}', '#5935de')
+        .replaceAll('{{ COLOR_BACKGROUND }}', CONFIG?.theme?.backgroundColor || '#efefef')
+        .replaceAll('{{ COLOR_SHADOW }}', CONFIG?.theme?.shadowcolor || 'rgba(0,0,0,0.1)')
+        .replaceAll('{{ COLOR_PRIMARY }}', CONFIG?.theme?.primaryColor ||'#5935de')
+        .replaceAll('{{ COLOR_HIGHLIGHT }}', CONFIG?.theme?.highlightColor ||'#fcf3a4')
         .replaceAll('{{ NAME }}', content?.name)
         .replaceAll('{{ ROLE }}', content?.role)
+        .replaceAll('<uppercase>', `<span class='uppercase'>`)
+        .replaceAll('</uppercase>', '</span>')
+        .replaceAll('<highlight>', `<span class='highlight'>`)
+        .replaceAll('</highlight>', '</span>')
               
       res.write(minify(parsed, {
         minifyCSS: true,
