@@ -1,5 +1,4 @@
 #! /usr/bin/env node
-
 const http = require('http')
 const fs = require('fs')
 const path = require('path')
@@ -10,7 +9,6 @@ const PACAKGE_JSON_PATH = `${process.cwd()}/package.json`
 const CONFIG_PATH = `${process.cwd()}/.polyder-io.js`
 
 try {
-
   let CONFIG 
   if (fs.existsSync(CONFIG_PATH)) {
     CONFIG = require(CONFIG_PATH)
@@ -36,6 +34,7 @@ try {
         .replaceAll('{{ NAME }}', content?.name)
         .replaceAll('{{ ROLE }}', content?.role)
         .replaceAll('{{ DESCRIPTION }}', content?.description)
+        .replaceAll('{{ GA }}', CONFIG?.ga)
         .replaceAll('<uppercase>', `<span class='uppercase'>`)
         .replaceAll('</uppercase>', '</span>')
         .replaceAll('<highlight>', `<span class='highlight'>`)

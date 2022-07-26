@@ -1,6 +1,6 @@
 {
   "name": "polyder-io",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Templating and hosting resume with JSON",
   "main": "index.js",
   "scripts": {
