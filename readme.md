@@ -6,6 +6,7 @@ Easily create a resume and host it as a web page.
 1. Create a folder and run `npm init`
 2. Add `"start": "npx polyder-io",` to scripts of `package.json`
 3. Create a config file, `.polyder-io.js`, in the project folder. 
+4. Run `npm start`
 
 # Config File Example
 You can utilize javascript with the config. 
