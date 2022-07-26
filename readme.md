@@ -1,5 +1,5 @@
 # polyder-io
-Easily create a resume and host it as web page.
+Easily create a resume and host it as a web page.
 
 # Getting Started
 
@@ -124,7 +124,7 @@ module.exports = {
 }
 ```
 
-You can write HTML code to the text and common markup is provided: 
+You can write HTML code to the text and, common markup is provided: 
 ```html
 <uppercase>[SOME_TEXT]</uppercase>
 <highlight>[SOME_TEXT]</highlight>
