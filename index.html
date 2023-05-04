@@ -23,7 +23,7 @@
     * {
       box-sizing: border-box;
       padding: 0;
-      margin: 0;      
+      margin: 0;
     }
 
     html {
@@ -81,6 +81,11 @@
     td {
       line-height: 24px;
       font-size: 16px;
+    }
+
+    .modal-text {
+      line-height: 18px;
+      font-size: 12px;
     }
 
     .content {
@@ -180,7 +185,7 @@
 
     .tag {
       font-size: 11px;
-      background: #efefef;      
+      background: #efefef;
       height: 20px;
       line-height: 20px;
       display: flex;
@@ -228,7 +233,7 @@
     a:visited {
       text-decoration: none;
       color: {{ COLOR_PRIMARY }};
-    }       
+    }
 
     button {
       cursor: pointer;
@@ -237,14 +242,14 @@
     .button-close {
       z-index: 5;
       width: 16px;
-      height: 8px;      
+      height: 8px;
       display: inline-block;
       position: relative;
       cursor: pointer;
     }
 
     .button-close span {
-      position: absolute;      
+      position: absolute;
       display: flex;
       width: 100%;
       height: 2px;
@@ -253,23 +258,23 @@
       transition: all .25s cubic-bezier(.165, .84, .44, 1);
     }
 
-    .button-close span:nth-of-type(1) {      
+    .button-close span:nth-of-type(1) {
       top: 0;
       left: 0;
     }
 
-    .button-close span:nth-of-type(2) {      
+    .button-close span:nth-of-type(2) {
       bottom: 0;
       left: 0;
     }
 
-    .button-close.closed span:nth-of-type(1) {      
+    .button-close.closed span:nth-of-type(1) {
       top: calc(50% - 1px);
       transform: rotate(45deg);
       left: 0;
     }
 
-    .button-close.closed span:nth-of-type(2) {      
+    .button-close.closed span:nth-of-type(2) {
       bottom: calc(50% - 1px);
       transform: rotate(135deg);
       left: 0;
@@ -280,7 +285,7 @@
     }
 
     .button:hover {
-      opacity: 0.8
+      opacity: 0.9
     }
 
     .button:hover:active {
@@ -296,7 +301,7 @@
       background: {{ COLOR_PRIMARY }};
       color: white;
       font-size: .9rem;
-      font-weight: 500;    
+      font-weight: 500;
     }
 
     .button-secondary {
@@ -305,9 +310,24 @@
       padding: 0 8px;
       border: 0;
       border-radius: 4px;
-      background: rgb(240,240,240);      
+      background: rgb(240,240,240);
       font-size: .9rem;
-      font-weight: 500;    
+      font-weight: 500;
+    }
+
+    .button-surface {
+      /* padding: 4px 8px; */
+      height: 28px;
+      padding: 0 8px;
+      border: 0;
+      border-radius: 4px;
+      background: white;
+      font-size: .9rem;
+      font-weight: 500;
+    }
+
+    .button-surface:hover {
+      background: rgb(245,245,245);
     }
 
     .hide {
@@ -342,7 +362,7 @@
     }
 
     #footer {
-      display: flex;       
+      display: flex;
       max-width: 800px;
       margin: 0 auto;
       width: 100%;
@@ -382,7 +402,7 @@
 
     .button-print .icon {
       fill: white;
-    } 
+    }
 
     .overlay {
       position: initial;
@@ -409,26 +429,39 @@
       left: 50%;
       transform: translate(-50%, -50%);
       border-radius: 4px;
-      padding: 16px;
       box-shadow: 1px 1px 10px 1px rgba(0,0,0,0.1);
     }
 
-    .container-modal img{ 
+    .container-modal-header {
+      padding: 8px 16px;
+      border-bottom: 1px solid rgb(230,230,230);
+    }
+
+    .container-modal-footer {
+      padding: 8px 16px;
+      border-top: 1px solid rgb(230,230,230);
+    }
+
+    .container-modal-content {
+      padding: 12px 16px;
+    }
+
+    .container-modal img{
       width: 100%;
     }
 
     #modal-print {
-      position: fixed; 
-      width: 100%; 
-      height: 100%; 
-      left: 0; 
-      top: 0; 
-      display: none; 
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      display: none;
       opacity: 0;
       transition: all .25s cubic-bezier(.165, .84, .44, 1);
-    }    
-    
-    .container-modal {    
+    }
+
+    .container-modal {
       transition: all .25s cubic-bezier(.165, .84, .44, 1);
     }
 
@@ -442,7 +475,7 @@
         flex-direction: column;
       }
 
-      .text-list-title {        
+      .text-list-title {
         line-height: 16px;
         margin-bottom: 8px;
       }
@@ -475,7 +508,7 @@
 
       .smaller-mobile {
         font-size: .8rem;
-        line-height: 14px;        
+        line-height: 14px;
       }
       .mb-4-mobile {
         margin-bottom: 4px;
@@ -507,7 +540,7 @@
       * {
         /* font-size: 20px; */
       }
-      
+
 
       #container-main {
         padding-right: 32px;
@@ -531,8 +564,8 @@
         max-width: 1200px;
         min-width: none;
         padding: 0;
-        box-shadow: none;        
-      }   
+        box-shadow: none;
+      }
 
       .no-print {
         display: none !important;
@@ -543,7 +576,7 @@
         opacity: 1 !important;
       }
 
-      .container-list-item-title { 
+      .container-list-item-title {
         flex-direction: row;
         align-items: center;
       }
@@ -571,10 +604,10 @@
   </style>
 </head>
 
-<body>  
-  <div id='container'>  
+<body>
+  <div id='container'>
     <div class="container-title flex mb-16">
-      <div class="flex centerY">        
+      <div class="flex centerY">
         <h1 id="text-name"></h1>
         <button id="button-print" class="button-print no-print" aria-label="Print this resume">
           <svg xmlns="http://www.w3.org/2000/svg" height="16px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path class="icon" d="M19 8H5c-1.66 0-3 1.34-3 3v4c0 1.1.9 2 2 2h2v2c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2v-2h2c1.1 0 2-.9 2-2v-4c0-1.66-1.34-3-3-3zm-4 11H9c-.55 0-1-.45-1-1v-4h8v4c0 .55-.45 1-1 1zm4-7c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-2-9H7c-.55 0-1 .45-1 1v2c0 .55.45 1 1 1h10c.55 0 1-.45 1-1V4c0-.55-.45-1-1-1z"/></svg>
@@ -591,21 +624,21 @@
           <div>
             <h2 class='mb-8 uppercase' id="text-role"></h2>
             <p class='mb-32 small' id='text-description'></p>
-          </div>     
-        </div>        
-        <div class='mb-32 content'>
+          </div>
+        </div>
+        <div class='mb-32'>
           <h2 class='mb-8 uppercase'>Experience</h2>
           <div id="text-experience"></div>
         </div>
-        <div class='mb-32 content'>
-          <h2 class='mb-8 content uppercase'>Education</h2>
+        <div class='mb-32'>
+          <h2 class='mb-8 uppercase'>Education</h2>
           <div id="text-education"></div>
         </div>
         <div class='mb-32'>
           <h2 class='mb-8 uppercase'>Projects</h2>
           <div id="text-other-projects"></div>
         </div>
-      </div>      
+      </div>
       <div class="container-side-element hide show-print not-visible">
         <div class="overlay no-print"></div>
         <div id="side">
@@ -617,7 +650,7 @@
           </div>
           <h2 class='mb-8 uppercase'>Skills</h2>
           <div id='text-other-skills' class="mb-32">
-          </div>          
+          </div>
         </div>
       </div>
     </div>
@@ -627,13 +660,16 @@
   </div>
   <div id="modal-print">
     <div class="overlay no-print">
-    </div>        
+    </div>
     <div class="container-modal no-print">
-      <p class="bold">Print</p>      
-      <p class="medium">Turn <span class="bold">background graphics</span> on for the best result!</p>
-      <img src="/setting.png" class='rounded mb-8'/>
-      <div class="flex alignRight">
-        <button class="button button-secondary mr-4" id="button-modal-close" aria-label="Close modal">
+      <div class="container-modal-header">
+        <p class="bold">Print my resume</p>
+      </div>
+      <div class="container-modal-content">
+        <p class="modal-text mb-8">For optimal results, please enable the "Turn on background graphics" setting in your Chrome browser.</p>
+      </div>
+      <div class="container-modal-footer flex alignRight">
+        <button class="button button-surface mr-4" id="button-modal-close" aria-label="Close modal">
           Close
         </button>
         <button class="button button-primary" id="button-modal-print" aria-label="Confirm printing">
@@ -701,7 +737,7 @@
       description,
     }) {
       return `
-        <div class="${tags.length > 0 ? 'mb-4 ' : ''}container-list-item-title" >
+        <div class="block ${tags.length > 0 ? 'mb-4 ' : ''}container-list-item-title" >
             <p class='text-list-title'><span class="bold">${title}${titleDesc ? ',' : ''}</span>
               ${titleDesc ? `<span class="small italic">${titleDesc}</span>` : ''}
             </p>
@@ -710,12 +746,12 @@
             </p>
           </div >
         ${tags.length > 0 ? `<div class="content flex-wrap">
-            ${map(tags, (tag) => { return `<span class="tag">${tag.includes('span') ? tag : `<span>${tag}</span>`}</span>` })}          
+            ${map(tags, (tag) => { return `<span class="tag">${tag.includes('span') ? tag : `<span>${tag}</span>`}</span>` })}
           </div>` : ''
         }
           ${description ? `<p class="small ${list.length > 0 ? 'mb-8' : ''}">${description}</p>` : ''}
           ${list.length > 0 ? `<ul>
-            ${map(list, (item, key) => { return `<li class="${key < list.length - 1 ? 'mb-8' : ''}">${item}</li>` })}      
+            ${map(list, (item, key) => { return `<li class="${key < list.length - 1 ? 'mb-8' : ''}">${item}</li>` })}
           </ul>`: ''
         }
       `
@@ -731,7 +767,7 @@
       `
     }
 
-    function toggleSide (isShowing, disableAnimation) {      
+    function toggleSide (isShowing, disableAnimation) {
       const sideElements = document.getElementsByClassName('container-side-element')
 
       for (let i = 0; i < sideElements.length; i++) {
@@ -741,7 +777,7 @@
 
           if (disableAnimation) {
             target.className = target.className.replaceAll(' not-visible', ' visible')
-          } else {          
+          } else {
             setTimeout(() => {
               target.className = target.className.replaceAll(' not-visible', ' visible')
             }, 100)
@@ -752,7 +788,7 @@
           if (disableAnimation) {
             target.className += ' hide'
           } else {
-            setTimeout(() => {            
+            setTimeout(() => {
               target.className += ' hide'
             }, 100)
           }
@@ -768,7 +804,7 @@
       } else {
         target.className = `${target.className} closed`
         toggleSide(true)
-      }      
+      }
     }
 
     const handleButtonPrint = () => {
@@ -810,7 +846,7 @@
 
       document.getElementById('button-modal-close').addEventListener('click', handleButtonModalClose)
       document.getElementById('button-modal-print').addEventListener('click', handleModalPrint)
-     
+
       // document.getElementById('button-print').removeEventListener('click', handleButtonPrint)
     }
 
@@ -832,11 +868,11 @@
     setContact()
 
     setInnerText('links', map(links, (item, key) => {
-      return `<div class="content ${key < links.length - 1 ? 'mb-8' : ''}" > ${generateSimplerList(item)}</div >`
+      return `<div class="${key < links.length - 1 ? 'mb-8' : ''}" > ${generateSimplerList(item)}</div >`
     }))
 
     setInnerText('other-skills', map(skills, (item, key) => {
-      return `<div class="content ${key < skills.length - 1 ? 'mb-8' : ''}" > ${generateSimplerList(item)}</div >`
+      return `<div class="${key < skills.length - 1 ? 'mb-8' : ''}" > ${generateSimplerList(item)}</div >`
     }))
 
     document.body.style.transform = 'translateY(-40px)'
@@ -847,26 +883,26 @@
         document.body.style.transform = ''
       }, 1)
     }, 50)
-    
-      const mobile = window.matchMedia('(max-width:800px)')      
-      // Register event listener      
 
-      mobile.addListener((e) => {     
+      const mobile = window.matchMedia('(max-width:800px)')
+      // Register event listener
+
+      mobile.addListener((e) => {
         if (e.matches) {
           toggleSide(false, true)
           const target = document.getElementById('button-menu')
           target.className = target.className.replace(' closed', '')
         } else {
           toggleSide(true, true)
-        }        
-      })   
+        }
+      })
 
       if (mobile.matches) {
         toggleSide(false, true)
       } else {
         toggleSide(true, true)
       }
-      
+
   </script>
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id={{ GA }}"></script>

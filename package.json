@@ -1,7 +1,7 @@
 {
   "name": "polyder-io",
-  "version": "1.0.7",
-  "description": "Templating and hosting resume with JSON",
+  "version": "1.0.8",
+  "description": "Create and host your resume with our JSON-based template.",
   "main": "index.js",
   "scripts": {
     "start": "node ./index.js",

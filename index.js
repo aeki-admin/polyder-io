@@ -5,20 +5,20 @@ const path = require('path')
 const minify = require('html-minifier').minify
 const clc = require("cli-color")
 
-const PACAKGE_JSON_PATH = `${process.cwd()}/package.json`
+const PACKAGE_JSON_PATH = `${process.cwd()}/package.json`
 const CONFIG_PATH = `${process.cwd()}/.polyder-io.js`
 
 try {
-  let CONFIG 
+  let CONFIG
   if (fs.existsSync(CONFIG_PATH)) {
     CONFIG = require(CONFIG_PATH)
-  } else if (fs.existsSync(PACAKGE_JSON_PATH)) {  
-    CONFIG = JSON.parse(fs.readFileSync(PACAKGE_JSON_PATH, "utf-8"))['polyder-io'];
+  } else if (fs.existsSync(PACKAGE_JSON_PATH)) {
+    CONFIG = JSON.parse(fs.readFileSync(PACKAGE_JSON_PATH, "utf-8"))['polyder-io'];
   }
 
   if (!CONFIG) {
     throw `${clc.magenta("polyder-io:")} ${clc.red("error:")} Please create '.polyder-io.js or add a 'polyder-io' to your package.json. Read more at https://www.npmjs.com/package/polyder-io`
-  }  
+  }
 
   const DEFAULT = CONFIG?.data?.filter?.((a) => a.default)?.[0]
 
@@ -39,7 +39,7 @@ try {
         .replaceAll('</uppercase>', '</span>')
         .replaceAll('<highlight>', `<span class='highlight'>`)
         .replaceAll('</highlight>', '</span>')
-              
+
       res.write(minify(parsed, {
         minifyCSS: true,
         minifyJS: true,
@@ -50,15 +50,15 @@ try {
     })
   }
 
-  http.createServer(function (req, res) {    
+  http.createServer(function (req, res) {
     if (fs.existsSync(CONFIG_PATH)) {
-      CONFIG = require(CONFIG_PATH)      
-    } else if (fs.existsSync(PACAKGE_JSON_PATH)) {  
-      CONFIG = JSON.parse(fs.readFileSync(PACAKGE_JSON_PATH, "utf-8"))['polyder-io'];
+      CONFIG = require(CONFIG_PATH)
+    } else if (fs.existsSync(PACKAGE_JSON_PATH)) {
+      CONFIG = JSON.parse(fs.readFileSync(PACKAGE_JSON_PATH, "utf-8"))['polyder-io'];
     }
 
     const picked = CONFIG?.data?.filter?.((a) => a.id === req.url.replace('/', ''))?.[0]
-    
+
     if (picked || req.url === '/') {
       console.log(`${clc.magenta("polyder-io:")} ${clc.green("log:")} request on resume -> ${picked?.id || 'default'}`)
       generateResume({ res, content: picked || DEFAULT })
@@ -69,7 +69,7 @@ try {
         var filePath = path.join(`${__dirname}/public`, req.url);
         var stat = fs.statSync(filePath);
 
-        res.writeHead(200, {          
+        res.writeHead(200, {
           'Content-Length': stat.size
         });
 
