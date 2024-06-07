@@ -4,7 +4,7 @@
   "description": "Create and host your resume with our JSON-based template.",
   "main": "index.js",
   "scripts": {
-    "start": "node ./index.js",
+    "start": "npx polyder-io",
     "build": "node ./build.js"
   },
   "bin": {
