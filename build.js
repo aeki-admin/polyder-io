@@ -2,8 +2,8 @@
 
 const fs = require('fs')
 const minify = require('html-minifier').minify
-
-const CONFIG = JSON.parse(fs.readFileSync(`${process.cwd()}/data.json`, "utf8"));
+const data = require('./.polyder-io')
+const CONFIG = data
 const SETCONFIG = JSON.parse(fs.readFileSync(`${process.cwd()}/package.json`, "utf8"))['polyder-io'];
 const DEFAULT = SETCONFIG?.data?.filter?.((a) => a.default)?.[0]
 
