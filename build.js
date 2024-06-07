@@ -16,6 +16,7 @@ function generateResume() {
       .replaceAll('{{ COLOR_PRIMARY }}', '#5935de')
       .replaceAll('{{ NAME }}', content?.name)
       .replaceAll('{{ DESCRIPTION }}', content?.description)
+      .replaceAll('{{ WEBSITE }}', content?.website)
       .replaceAll('{{ ROLE }}', content?.role)
 
     const payload = minify(parsed, {
